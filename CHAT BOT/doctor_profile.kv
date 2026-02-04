@@ -1,0 +1,271 @@
+
+AppointmentScreen:
+#------------------------------------------------------------Appointment profile-----------------------------------------------------------
+<AppointmentScreen>:
+    name:"profile"
+    md_bg_color: rgba(246,250,255,255)
+    MDFloatLayout:
+        size_hint_y:.65
+        pos_hint:{"center_y":.7}
+        md_bg_color:1,1,1,1
+        elevation: 3
+        radius:[0,0,20,20]
+        MDIconButton:
+            icon:"arrow-left"
+            pos_hint:{'center_y':.91}
+            user_font_size : "20sp"
+            theme_text_color: "Custom"
+            text_color:rgba(71,92,119,255)
+            on_release:
+                root.manager.current='filter'
+        MDIconButton:
+            icon:"dots-vertical"
+            pos_hint:{"center_x":.93,'center_y':.91}
+            user_font_size : "20sp"
+            theme_text_color: "Custom"
+            text_color:rgba(71,92,119,255)
+            on_release:
+                print("Settings")
+        MDLabel:
+            text:"Doctor Profile"
+            font_name: "BPoppins"
+            font_size: "20sp"
+            pos_hint:{"center_x":.82,"center_y":.90}
+            color:rgba(71,92,119,255)
+        Image:
+            id:img
+            source:""
+            size_hint_x:1
+            size_hint_y:1
+            height: 400
+            width: 200
+            pos_hint:{"center_x":.5,'center_y':.66}
+
+        MDLabel:
+            id:name
+            text:""
+            font_name: "BPoppins"
+            halign:'center'
+            pos_hint:{"center_y":.48}
+            color:rgba(71,92,119,255)
+        MDLabel:
+            id: study
+            text:"MBBS, MD-General Medical"
+            font_name: "MPoppins"
+            halign:'center'
+            pos_hint:{"center_y":.42}
+            font_size:"12sp"
+            color:rgba(188,202,228,255)
+        MDLabel:
+            text:"Specialist    :"
+            font_name: "BPoppins"
+            halign:'center'
+            pos_hint:{"center_x":.17,"center_y":.34}
+            color:rgba(71,92,119,255)
+        MDLabel:
+            id:specialist
+            text:""
+            halign:'center'
+            pos_hint:{"center_x":.7,"center_y":.34}
+            font_name: "BPoppins"
+            color:rgba(71,92,119,255)
+        MDLabel:
+            text:"Experience     :"
+            font_name: "BPoppins"
+            halign:'center'
+            pos_hint:{"center_x":.17,"center_y":.26}
+            color:rgba(71,92,119,255)
+        MDLabel:
+            id: experience
+            text:""
+            halign:'center'
+            pos_hint:{"center_x":.7,"center_y":.26}
+            font_name: "BPoppins"
+            color:rgba(71,92,119,255)
+        MDLabel:
+            text:"Availability    :"
+            font_name: "BPoppins"
+            halign:'center'
+            pos_hint:{"center_x":.17,"center_y":.18}
+            color:rgba(71,92,119,255)
+        MDLabel:
+            id: availability
+            text:""
+            halign:'center'
+            pos_hint:{"center_x":.7,"center_y":.18}
+            font_name: "BPoppins"
+            color:rgba(71,92,119,255)
+        MDLabel:
+            text:"Location       :"
+            font_name: "BPoppins"
+            halign:'center'
+            pos_hint:{"center_x":.17,"center_y":.10}
+            color:rgba(71,92,119,255)
+        MDLabel:
+            id: location
+            text:"Visakhapatnam"
+            halign:'center'
+            pos_hint:{"center_x":.7,"center_y":.10}
+            font_name: "BPoppins"
+            color:rgba(71,92,119,255)
+
+
+
+
+    MDLabel:
+        text:"-------- Contact Details --------"
+        font_name: "MPoppins"
+        halign:'center'
+        pos_hint:{"center_y":.32}
+        font_size:"12sp"
+        color:rgba(188,202,228,255)
+    MDLabel:
+        text:"Phone.No       :"
+        font_name: "BPoppins"
+        halign:'center'
+        pos_hint:{"center_x":.17,"center_y":.26}
+        color:rgba(71,92,119,255)
+    MDLabel:
+        id: phone
+        text:""
+        halign:'center'
+        pos_hint:{"center_x":.7,"center_y":.26}
+        font_name: "BPoppins"
+        color:rgba(71,92,119,255)
+
+    MDLabel:
+        text:"Hospital       :"
+        font_name: "BPoppins"
+        halign:'center'
+        pos_hint:{"center_x":.17,"center_y":.22}
+        color:rgba(71,92,119,255)
+    MDLabel:
+        id: hospital
+        text:""
+        halign:'center'
+        pos_hint:{"center_x":.7,"center_y":.22}
+        font_name: "BPoppins"
+        color:rgba(71,92,119,255)
+    MDLabel:
+        spacing: 100
+        text:"Address       :"
+        font_name: "BPoppins"
+        halign:'center'
+        pos_hint:{"center_x":.17,"center_y":.15}
+        color:rgba(71,92,119,255)
+    MDLabel:
+        id: address
+        text:""
+        halign:'center'
+        pos_hint:{"center_x":.65,"center_y":.14}
+        font_name: "BPoppins"
+        color:rgba(71,92,119,255)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#    MDLabel:
+#        text:"Availability       :"
+#        font_name: "BPoppins"
+#        halign:'center'
+#        pos_hint:{"center_x":.3,"center_y":.14}
+#        color:rgba(71,92,119,255)
+#    MDLabel:
+#        text:"Time - Slots"
+#        halign:'center'
+#        pos_hint:{"center_x":.7,"center_y":.14}
+#        font_name: "BPoppins"
+#        color:rgba(71,92,119,255)
+
+#--------------------------------------------------Emergency---------------------------------------------------------------------------------------------
+#
+#<EmergencyScreen>:
+#    name :"Quick"
+#    md_bg_color: rgba(246,250,255,255)
+#    MDBoxLayout:
+#        orientation: 'vertical'
+#        padding: 10
+#        spacing:10
+#        MDBoxLayout:
+#            orientation: 'vertical'
+#            size_hint_y:1
+#            MDFloatLayout:
+#                default_size_hint:1,None
+#                size_hint_y:0.1
+#               # md_bg_color: rgba(26,20,25,255)
+#                MDIconButton:
+#                    icon:"arrow-left"
+#                    pos_hint:{'center_y':.96}
+#                    user_font_size : "20sp"
+#                    theme_text_color: "Custom"
+#                    text_color:rgba(71,92,119,255)
+#                MDIconButton:
+#                    icon:"dots-vertical"
+#                    pos_hint:{"center_x":.93,'center_y':.96}
+#                    user_font_size : "20sp"
+#                    theme_text_color: "Custom"
+#                    text_color:rgba(71,92,119,255)
+#                    on_release:
+#                        print("Settings")
+#                MDLabel:
+#                    text:"Emergency Services"
+#                    font_name: "BPoppins"
+#                    font_size: "20sp"
+#                    pos_hint:{"center_x":.65,"center_y":.80}
+#                    color:rgba(71,92,119,255)
+#            MDBoxLayout:
+#                orientation:'vertical'
+#                MDGridLayout:
+#                   # md_bg_color: rgba(26,20,25,255)
+#
+##                    elevation: 3
+##                    radius:[0,0,20,20]
+##                    size_hint:1,.2
+##                    halign:"center"
+#                    #md_bg_color:1,1,1,1
+#                    md_bg_color:240/255,240/255,240/255,1
+#                    size_hint_y:.6
+#                    cols:2
+#                    padding:dp(10)
+#                    spacing:dp(10)
+#                    ElementCard:
+#                        image:"ambulance.png"
+#                        text:"CHAT BOT"
+#                        subtext:"Let's Chat"
+##                        on_press:
+##                            root.manager.current= "chatbot"
+#
+
+
+

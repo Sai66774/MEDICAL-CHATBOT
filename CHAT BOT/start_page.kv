@@ -1,0 +1,55 @@
+#: import Window kivy.core.window.Window
+
+DribbleUI:
+<DribbleUI>:
+    name: "start_page"
+    MDBoxLayout:
+        orientation:'vertical'
+        MDScreen:
+            canvas.after:
+                Color:
+                    rgba:.2,.2,.2,.5-(root.animation_constant/100)
+                Ellipse:
+                    size:dp(180)*(1-(root.animation_constant/100)),dp(40)
+                    pos:self.pos[0]+(Window.width/2)-(dp(180)*(1-(root.animation_constant/100)))/2,self.pos[1]
+            RelativeLayout:
+                Image:
+                    source:'icon.png'
+                    size_hint:None,None
+                    size:'200dp','200dp'
+                    pos_hint:{'center_x':.5,'center_y':.5+((root.animation_constant*2)/(Window.height))}
+        MDBoxLayout:
+            orientation:'vertical'
+            spacing:'12dp'
+            padding:'12dp'
+            MDLabel:
+                text:' MEDICAL CHAT BOT'
+                halign:'center'
+                font_style:'H5'
+                bold:True
+            MDLabel:
+                text:'LOGIN FOR USE'
+                halign:'center'
+                font_style:'Subtitle1'
+            MDFillRoundFlatButton:
+                text:'Sign In'
+                pos_hint:{'center_x':.5,'center_y':.5}
+                size_hint_x:1
+                md_bg_color:1,20/255,147/255,1
+                on_release:
+                    root.manager.current= "login"
+            MDFillRoundFlatButton:
+                text:'Emergency'
+                pos_hint:{'center_x':.5,'center_y':.5}
+                size_hint_x:1
+                md_bg_color:1,20/255,147/255,1
+                on_release:
+                    root.manager.current= "login"
+            MDTextButton:
+                text:'Create an Account!'
+                pos_hint:{'center_x':.5,'center_y':.5}
+                theme_text_color:'Custom'
+                text_color:68/255,166/255,198/255,1
+                on_release:
+                    root.manager.current= "create_acc"
+            MDBoxLayout

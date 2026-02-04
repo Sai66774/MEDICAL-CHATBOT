@@ -1,0 +1,109 @@
+# 56, 40, 81
+HomePage:
+<HomePage>:
+    name: "home"
+    md_bg_color:255/255,255/255,255/255,1
+    MDBoxLayout:
+        orientation:'vertical'
+        MDBoxLayout:
+            size_hint_y:.25
+            padding:dp(25)
+            MDBoxLayout:
+                orientation:"horizontal"
+                GridLayout:
+                    cols: 2
+                    size_hint: 1, None
+                    height: dp(100)
+                    Image:
+                        source: 'profile.png'
+                        size_hint: None, None
+                        size: 200, 200
+                        allow_stretch: True
+                    BoxLayout:
+                        orientation: 'vertical'
+                        size_hint: .1, .1
+                        width: dp(600)
+                        padding:dp(10)
+                        MDLabel:
+                            id:name
+                            text: 'NAME'
+                            font_size: dp(20)
+                        MDLabel:
+                            id:phone
+                            text: 'Phone NO'
+                            font_size: dp(20)
+                        MDLabel:
+                            id:pin
+                            text: 'PIN'
+                            font_size: dp(20)
+            MDIconButton:
+                icon:"notification.png"
+        MDGridLayout:
+            size_hint_y:.75
+            cols:2
+            padding:[dp(15),dp(15),dp(15),dp(35)]
+            spacing:dp(15)
+            ElementCard:
+                image:"bot.png"
+                text:"CHAT BOT"
+                subtext:"Let's Chat"
+                on_press:
+                    root.manager.current= "chatbot"
+            ElementCard:
+                image:"truck.png"
+                text:"Emergency"
+                subtext:"\nGet details \n near hospitals"
+                on_release:
+                    root.manager.current="AmbScreen"
+
+            ElementCard:
+                image:"appointment.png"
+                text:"Appointment"
+                subtext:"Book Appointment"
+                items_count:""
+                on_release:
+                    root.manager.current="filter"
+
+            ElementCard:
+                image:"history.png"
+                text:"History"
+                subtext:"Get Previous Details"
+
+            ElementCard:
+                image:"settings.png"
+                text:"Profile Edit"
+                subtext:"Edit Details"
+                on_release:
+                    root.manager.current="edit_details"
+            ElementCard:
+                image:"logout.png"
+                text:"Log Out"
+                subtext:""
+                on_release:
+                    root.manager.current="start_page"
+
+
+<ElementCard@MDCard>:
+    md_bg_color:150/255,200/255,100/255,1
+    padding:dp(15)
+    spacing:dp(15)
+    radius:dp(25)
+    ripple_behavior: True
+    image:''
+    text:""
+    items_count:""
+    subtext:''
+
+    orientation:'vertical'
+    Image:
+        source:root.image
+    MDBoxLayout:
+        orientation:'vertical'
+        MDLabel:
+            halign:"center"
+            text:root.text
+            font_style:"H6"
+        MDLabel:
+            halign:"center"
+            font_style:"Caption"
+            text:root.subtext

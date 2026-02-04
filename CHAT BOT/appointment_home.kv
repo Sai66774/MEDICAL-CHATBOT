@@ -1,0 +1,127 @@
+MainInterface:
+<MainInterface>:
+    name :"filter"
+
+    canvas.before:
+        Rectangle:
+            size :self.size
+            pos : self.pos
+    MDBoxLayout:
+        orientation: 'vertical'
+
+        padding: 10
+        spacing:10
+        MDBoxLayout:
+            orientation: 'vertical'
+            size_hint_y:-1
+            MDFloatLayout:
+                default_size_hint:1,None
+                size_hint_y:0.1
+                MDIconButton:
+                    icon:"arrow-left"
+                    pos_hint:{'center_y':.91}
+                    user_font_size : "20sp"
+                    theme_text_color: "Custom"
+                    text_color:rgba(71,92,119,255)
+                    on_release:
+                        root.manager.current='home'
+                MDIconButton:
+                    icon:"dots-vertical"
+                    pos_hint:{"center_x":.93,'center_y':.94}
+                    user_font_size : "20sp"
+                    theme_text_color: "Custom"
+                    text_color:rgba(71,92,119,255)
+                    on_release:
+                        print("Settings")
+                MDLabel:
+                    text:"Select Doctor"
+                    font_name: "BPoppins"
+                    font_size: "20sp"
+                    pos_hint:{"center_x":.79,"center_y":.90}
+                    color:rgba(71,92,119,255)
+
+            MDCard:
+                orientation: 'vertical'
+                md_bg_color:0.9,1,0.9,0.6
+                size_hint:1, None
+                pos_hint:{'center_x':.5,'center_y':.5}
+                height: dp(70)
+                radius: 20
+                #spacing:10
+                MDTextField:
+                    id : textfield
+                    hint_text: "Search"
+                    icon_right: 'magnify'
+                    on_text: root.search()
+                    size_hint_x:.8
+                    pos_hint:{'center_x':.5,'center_y':.5}
+
+            CustomRecycleView:
+                viewclass: 'ElementCard1'
+                id: recycleview
+                height:500
+                size_hint:(1,1)
+                RecycleGridLayout:
+                    cols: 1
+                    padding:dp(10)
+                    spacing:dp(10)
+                    pos_hint:{'center_x':.5,'center_y':.5}
+                    default_size_hint: 10,None
+                    height:self.minimum_height
+                    adaptive_height:True
+                    col_default_height: (self.height - self.padding[0] - self.padding[2] - self.cols * self.spacing[0])/self.cols
+
+
+
+<ElementCard1>
+    orientation: 'vertical'
+    pos_hint :{'center_x':.5,'center_y':.5}
+    size_hint:(1,1)
+    md_bg_color:[150/255,200/255,100/255,1]
+    height:500
+    radius : 20
+    padding: dp(3)
+    default_size_hint: 1,None
+    on_press:
+        app.move_to_profile(root.id_name)
+
+    MDGridLayout:
+        cols:3
+        adaptive_height: True
+
+        Image:
+            id:root.img
+            source:root.img
+
+        MDGridLayout:
+            cols:1
+            MDLabel:
+                # id:
+                text: "Name   :"
+                halign:'center'
+                font_style: 'Caption'
+            MDLabel:
+                # id:
+                text: "Specialist   :"
+                halign:'center'
+                font_style: 'Caption'
+            MDLabel:
+                # id:
+                text: "Hospital   :"
+                halign:'center'
+                font_style: 'Caption'
+        MDGridLayout:
+            cols:1
+            MDLabel:
+                id: root.id_name
+                text: root.icon_to_display
+                font_style: 'Caption'
+            MDLabel:
+                id: root.id_specialist
+                text: root.id_specialist
+                font_style: 'Caption'
+            MDLabel:
+                id: root.id_hospital
+                text: root.id_hospital
+                font_style: 'Caption'
+

@@ -1,0 +1,170 @@
+AmbulanceScreen:
+<AmbulanceScreen>:
+    name :"AmbScreen"
+    canvas.before:
+        Color:
+
+           # rgb: 0.2, 0.5, 1, 0.01
+        Rectangle:
+            size :self.size
+            pos : self.pos
+    MDBoxLayout:
+        orientation: 'vertical'
+
+        padding: 10
+        spacing:10
+        MDBoxLayout:
+            orientation: 'vertical'
+            size_hint_y:-1
+            MDFloatLayout:
+                default_size_hint:1,None
+                size_hint_y:0.1
+                MDIconButton:
+                    icon:"arrow-left"
+                    pos_hint:{'center_y':.91}
+                    user_font_size : "20sp"
+                    theme_text_color: "Custom"
+                    text_color:rgba(71,92,119,255)
+                    on_release:
+                        root.manager.current='home'
+                MDIconButton:
+                    icon:"dots-vertical"
+                    pos_hint:{"center_x":.93,'center_y':.94}
+                    user_font_size : "20sp"
+                    theme_text_color: "Custom"
+                    text_color:rgba(71,92,119,255)
+                    on_release:
+                        print("Settings")
+                MDLabel:
+                    text:"Ambulance Service"
+                    font_name: "BPoppins"
+                    font_size: "20sp"
+                    pos_hint:{"center_x":.79,"center_y":.90}
+                    color:rgba(71,92,119,255)
+
+            MDCard:
+                orientation: 'vertical'
+                md_bg_color:0.9,1,0.9,0.6
+                size_hint:1, None
+                pos_hint:{'center_x':.5,'center_y':.5}
+                height: dp(70)
+              #  elevation: 5
+                radius: 20
+                #spacing:10
+                MDTextField:
+                    id : textfield
+                    hint_text: "Search"
+                    icon_right: 'magnify'
+                    on_text: root.search()
+
+                    size_hint_x:.8
+                    pos_hint:{'center_x':.5,'center_y':.5}
+#            BoxLayout
+#                orientation:'vertical'
+#                size_hint_y:0.01
+#                size_hint:1, None
+#                pos_hint:{'center_x':.5,'center_y':.5}
+#                MDFillRoundFlatButton:
+#                    text: "Click Here To Go"
+#                    halign:'center'
+#                    size_hint_x:1
+#                    pos_hint:{'center_x':.5,'center_y':.5}
+#                    default_size_hint:1,None
+#                   # height:self.minimum_height
+#                    text_color: "white"
+#                    md_bg_color:[1,20/255,147/255,1]
+#                    on_press:
+#                        root.manager.current='profile'
+
+
+
+            CustomRecycleView:
+                viewclass: 'ElementCard10'
+                id: recycleview
+
+                RecycleGridLayout:
+                    cols: 1
+                    padding:dp(10)
+                    spacing:dp(10)
+                    pos_hint:{'center_x':.5,'center_y':.5}
+#                    size_hint:(.13,.20)
+#                    default_size: None, dp(48)
+                    default_size_hint: 1,None
+                    size_hint_y: None
+                    height:self.minimum_height
+
+
+
+<ElementCard10>
+    orientation: 'vertical'
+    pos_hint :{'center_x':.5,'center_y':.5}
+    size_hint:(.5,.5)
+    md_bg_color:[150/255,200/255,100/255,1]
+    #size_hint:1, None
+    height: dp(100)
+    #elevation: 5
+    radius : 20
+    padding: dp(3)
+    MDBoxLayout:
+        orientation:'vertical'
+        md_bg_color:[150/255,200/255,100/255,1]
+        MDFloatLayout:
+           # default_size_hint:1,None
+            size_hint_y:0.1
+            MDLabel:
+                pos_hint:{'center_y':.81}
+                size_hint:(1,.3)
+                halign:'center'
+                color:rgba(71,92,119,255)                             #  text:root.icon_to_display1
+                                #                font_name: "BPoppins"
+                                #                font_size: "20sp"
+                                #                md_bg_color:0,1,1,1
+
+
+
+            MDLabel:
+                text:root.icon_to_display
+                                                #                font_name: "BPoppins"
+                                                #                font_size: "20sp"
+                                                #                md_bg_color:1,1,0,1
+                size_hint:(1,.3)
+                halign:'center'
+                pos_hint:{'center_y':.51}
+                color:rgba(71,92,119,255)
+
+            MDLabel:
+#                 text:root.icon_to_display1
+#                font_name: "BPoppins"
+#                font_size: "20sp"
+#                md_bg_color:1,0,1,1
+                size_hint:(1,.3)
+                halign:'center'
+                pos_hint:{"center_y":.21}
+                color:rgba(71,92,119,255)
+
+
+
+
+
+
+
+
+
+        #root.manager.current='profile'
+#    MDIcon:
+#        icon: root.icon_to_display
+#        valign : 'center'
+#        halign:'center'
+#    Image:
+#        size_hint:.5,.5
+#        type:'large'
+#        pos_hint:{'center_x':.5,'center_y':.5}
+#        source:'images/prashanth.png'
+#        #source: root.icon_to_display
+#        halign:'center'
+#            MDLabel:
+#                text: root.icon_to_display
+#                halign:'center'
+#                md_bg_color:0,0,1,1
+#                font_style: 'Caption'
+

@@ -1,0 +1,10 @@
+contact={"Apollo Hospitals":"8912727272",
+         "Queen's NRI Hospital":"8912827777",
+         "CARE Hospitals":"04068106589",
+         "Q1 Hospitals":"0643106589",
+         "K.G.H":"0242762872",
+         "santance":"0534244262",
+         "KIMS":"064543221",
+         "VIMS":"0763452722",
+         "Practo Care":"0623572617",
+         "Vijaya Hospital":"0980232113"}
