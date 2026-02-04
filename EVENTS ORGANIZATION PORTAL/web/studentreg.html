@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Student Registration</title>
+    <link rel="stylesheet" href="Reg.css">  
+</head>
+<body>
+<header>
+    <div class="wrapper">
+<p style="font-size:30px; float:left; color:white; padding:20px; font-family: Harrington;font-style: Bold Oblique;"> EVENTECH</p>
+<ul class="nav-area">
+<li><a href="index.html">Home</a></li>
+<li><a href="stafflogin.jsp">Organizer Login</a></li>
+<li><a href="contact.html">Contact Us</a></li>
+<li><a href="about.html">About</a></li>
+</ul>
+</div>
+<div class="main">
+<div class="register">
+<form id="register" action="student-registration-DB.jsp" >
+	<br>
+	<label >Registration No</label><br>
+	<input type="text"  class="name" placeholder="Id No" name="no" required>
+	<br>
+	<br>
+	<label >Name </label><br>	
+	<input type="text"  class="name" placeholder="Name" name="name" required>
+	<br>
+	<br>
+	<label>Branch</label><br>
+	<select name="branch">
+		<option >CSE</option>
+		<option>ECE</option>
+		<option>EEE</option>
+		<option>CHEM</option>
+		<option>MECH</option>
+		<option>IT</option>
+		<option>MECH</option>
+	</select>
+	<br>
+	<br>
+	<label >Email</label>	<br>
+	<input type="email" class="name" placeholder="COLLEGE Email ID" name="email" required>
+	<br>
+	<br>
+	<label >Password</label><br>	
+	<input type="password" class="name" placeholder="Password"  name="password" id="pass" required>
+	<br>
+	<br>
+	<label >Confirm-Password</label><br>	
+	<input type="password" class="name" placeholder="Confirm-Password" name="re-password" id="re-pass" required>
+	<br>
+	<br>
+	<label >Security Question</label><br>	
+	<select  class="name" name="question">
+                                        <option >Your nick name</option>
+                                        <option>Your pet name</option>
+                                        <option>Your favorite book</option>
+                                        <option>Your favorite color</option>
+                            </select>
+	<br>
+	<br>
+	<label >Security Answer</label>	<br>
+	<input type="text" class="name"  placeholder="Answer in lowercase" name="answer" required >
+	<br>	
+	<br>
+             <input type="submit" value="Submit" id="submit" onclick="corr()" > <button id="back" onclick="history.back()">Back</button>
+<p> Already have an account? <a href="studentlogin.jsp"> Login</a></p>
+<br>
+</form> 
+</div>
+</body>
+</html>
